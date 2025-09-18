@@ -1,7 +1,7 @@
 clc; clear; close all
 
 % caricamento del file svg
-fileID = fopen('C:/Users/allibis/Downloads/allibis.svg', 'r');
+fileID = fopen('allibis.svg', 'r');
 svg_content = fread(fileID, '*char')';
 fclose(fileID);
 
@@ -63,4 +63,5 @@ for i = 1:size(commands{1}, 2)
     
     
     
+
 end
