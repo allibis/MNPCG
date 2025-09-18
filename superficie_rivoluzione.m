@@ -13,6 +13,6 @@ P(:,:,3) = P1(:,3)*P2(:,3)';
 w = w1(:)*w2;
 S = superficie_nurbs(P,w,ti1,ti2,u,v);
 
-figure(2), plot3(P(:,:,1),P(:,:,2),P(:,:,3),':o')
-hold on
-surf(S(:,:,1),S(:,:,2),S(:,:,3))
+% figure(2), plot3(P(:,:,1),P(:,:,2),P(:,:,3),':o')
+% hold on
+% surf(S(:,:,1),S(:,:,2),S(:,:,3))
