@@ -1,0 +1,35 @@
+
+
+
+clc, clear, close all
+
+N = 50; % N = numero di punti (es. 200)
+a = 0.1; % a = ampiezza delle ondulazioni
+
+theta = linspace(0, 2*pi, N+1)';  % angolo [0,2pi]
+theta(end) = [];                  % rimuovo duplicato finale
+
+
+
+NP = 20;
+A = linspace(0,pi/2,NP);
+
+
+z = sin(A);
+y = zeros(size(z,2),1);
+x = 0.5./(1-linspace(0,.5,NP));
+
+plot3(x,y,z, 'r-o')
+axis equal
+xlabel('x'); ylabel('y'); zlabel('z');
+
+for j=1:NP
+    R = x(j);
+    r = R * (1 + a*cos(6*theta));     % raggio con 6 petali
+    
+    x = r .* cos(theta);
+    y = r .* sin(theta);
+    
+    P = [x y];  % matrice Nx2
+end
+
