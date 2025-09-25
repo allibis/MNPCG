@@ -1,7 +1,9 @@
 clc; clear; close all
 
+LW = 4;
+
 % caricamento del file svg
-fileID = fopen('allibis.svg', 'r');
+fileID = fopen('AS & FC.svg', 'r');
 svg_content = fread(fileID, '*char')';
 fclose(fileID);
 
@@ -28,7 +30,7 @@ for i = 1:size(commands{1}, 2)
             x(2) = coords(1);
             y(2) = -coords(2); 
 
-            plot(x, y, 'r-')
+            plot(x, y, 'r-',LineWidth=LW)
             disp(actual)
             disp([x(:) y(:)])
 
@@ -45,7 +47,7 @@ for i = 1:size(commands{1}, 2)
             w = [1 1 1];
             ti = [0 0 0 1 1 1];
             Q = de_boor_razionale(P,w,ti);
-            plot(Q(:,1), Q(:,2), 'r-');
+            plot(Q(:,1), Q(:,2), 'r-', LineWidth=LW);
             disp(actual)
             disp(P)
             x = [coords(3)];
